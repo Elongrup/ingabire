@@ -1,0 +1,27 @@
+[
+    {
+      "id": 1,
+      "name": "Product 1",
+      "ingredients": "Ingredient A, Ingredient B",
+      "price": 1500,
+      "category": "Category 1",
+      "image": "images/product1.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Product 2",
+      "ingredients": "Ingredient C, Ingredient D",
+      "price": 2500,
+      "category": "Category 2",
+      "image": "images/product2.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Product 3",
+      "ingredients": "Ingredient E, Ingredient F",
+      "price": 3500,
+      "category": "Category 3",
+      "image": "images/product3.jpg"
+    }
+  ]
+  
