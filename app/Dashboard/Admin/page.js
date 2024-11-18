@@ -7,6 +7,7 @@ import AddProduct from './AddProduct';
 import ListProduct from './ListProduct';
 import Home from './Home';
 import ListOfOrders from './ListOfOrders';
+import Reports from './Reports';
 
 export default function AdminDashboard() {
   const [selectedContent, setSelectedContent] = useState('home'); // Default to home
@@ -46,7 +47,7 @@ export default function AdminDashboard() {
       case 'listOrders':
         return <ListOfOrders />;
       case 'reports':
-        return <div>Reports Content</div>;
+        return <Reports />;
       case 'claims':
         return <div>Claims Content</div>;
       default:
