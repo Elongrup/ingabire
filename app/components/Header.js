@@ -1,26 +1,26 @@
 "use client";
-import { useState } from 'react';
-import Paper from '@mui/material/Paper';
-import HomeIcon from '@mui/icons-material/Home';
+import Paper from "@mui/material/Paper";
 
 export default function Header({ onHomeClick }) {
   return (
     <div>
-      <Paper elevation={3} className="p-4">
-        <div className="flex space-x-4">
-          <button
-            className="text-lg flex items-center p-2 rounded-lg"
-            style={{
-              backgroundImage:
-                'linear-gradient(to right top, #b28529, #bf8d27, #cc9525, #d99c22, #e7a41e, #eaa92c, #ecaf38, #efb443, #e8b85b, #e0bb71, #d9be86, #d2c09b)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-            }}
-            onClick={() => onHomeClick()} // Handle the Home click
-          >
-            <HomeIcon fontSize="small" className="mr-2" />
-            Home
-          </button>
+      <Paper
+        elevation={3}
+        className="p-4"
+        style={{
+          height: "10vh", // Set height to cover the screen
+          padding: "20px",
+        }}
+      >
+        <div
+          className="flex items-center"
+          style={{
+            gap: "100px", // Increase the gap between the items
+            width: "100%", // Ensure the container takes up full width
+          }}
+        >
+          <h1 style={{ margin: 0, fontSize: "1.5rem" }}>HOTEL NAME</h1>
+          <h3 style={{ margin: 0, fontSize: "1rem" }}>Welcome [Admin Name]</h3>
         </div>
       </Paper>
     </div>

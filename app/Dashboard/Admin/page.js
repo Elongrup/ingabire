@@ -1,26 +1,26 @@
 "use client";
-import { useState } from 'react';
-import Header from '../../components/Header'; // Fixed header
-import Sidebar from '../../components/Sidebar';
-import AddUser from './AddUser';
-import AddProduct from './AddProduct';
-import ListProduct from './ListProduct';
-import Home from './Home';
-import ListOfOrders from './ListOfOrders';
-import Reports from './Reports';
+import { useState } from "react";
+import Header from "../../components/Header"; // Fixed header
+import Sidebar from "../../components/Sidebar";
+import AddUser from "./AddUser";
+import AddProduct from "./AddProduct";
+import ListProduct from "./ListProduct";
+import Home from "./Home";
+import ListOfOrders from "./ListOfOrders";
+import Reports from "./Reports";
 
 export default function AdminDashboard() {
-  const [selectedContent, setSelectedContent] = useState('home'); // Default to home
+  const [selectedContent, setSelectedContent] = useState("home"); // Default to home
 
   // Define the sidebar links
   const links = [
-    { label: 'Users', href: 'users' },
-    { label: 'Role', href: 'role' },
-    { label: 'Add Product', href: 'addProduct' },
-    { label: 'List Products', href: 'listProducts' },
-    { label: 'List Orders', href: 'listOrders' },
-    { label: 'Reports', href: 'reports' },
-    { label: 'Claims', href: 'claims' },
+    { label: "Users", href: "users" },
+    { label: "Role", href: "role" },
+    { label: "Add Product", href: "addProduct" },
+    { label: "List Products", href: "listProducts" },
+    { label: "List Orders", href: "listOrders" },
+    { label: "Reports", href: "reports" },
+    { label: "Claims", href: "claims" },
   ];
 
   // Handle selection of content
@@ -30,25 +30,25 @@ export default function AdminDashboard() {
 
   // Handle Home click to reset content to 'home'
   const handleHomeClick = () => {
-    setSelectedContent('home');
+    setSelectedContent("home");
   };
 
   // Render dynamic content based on selected link
   const renderContent = () => {
     switch (selectedContent) {
-      case 'users':
+      case "users":
         return <AddUser />;
-      case 'role':
+      case "role":
         return <div>Role Management Content</div>;
-      case 'addProduct':
+      case "addProduct":
         return <AddProduct />;
-      case 'listProducts':
+      case "listProducts":
         return <ListProduct />;
-      case 'listOrders':
+      case "listOrders":
         return <ListOfOrders />;
-      case 'reports':
+      case "reports":
         return <Reports />;
-      case 'claims':
+      case "claims":
         return <div>Claims Content</div>;
       default:
         return <Home />;
@@ -56,22 +56,23 @@ export default function AdminDashboard() {
   };
 
   return (
-    <div className="min-h-screen">
-      {/* Fixed Header with Home button */}
-      <Header onHomeClick={handleHomeClick} />
-
+    <div className="min-h-screen ml-9">
       {/* Content Area */}
-      <div className="flex mt-16">
-        {/* Sidebar */}
-        <div className="w-1/4 px-4">
-          <Sidebar links={links} onSelect={handleSelect} />
-        </div>
+        <div className="flex">
+          {/* Sidebar */}
+          <div className="w-1/4 p-4 bg-white shadow rounded-lg mr-4">
+            <Sidebar links={links} onSelect={handleSelect} />
+          </div>
 
-        {/* Dynamic Content Area */}
-        <div className="flex-1 ml-6 p-6 bg-gray-50 shadow rounded-lg">
-          {renderContent()}
+          {/* Dynamic Content Area */}
+          <div className="flex-1 p-6 bg-gray-50 shadow rounded-lg" style={{ maxWidth: "80%" }}>
+            <div className="sticky top-0 z-10 bg-white shadow-md mb-4">
+              <Header onHomeClick={handleHomeClick} />
+            </div>
+            {renderContent()}
+          </div>
         </div>
-      </div>
+     
     </div>
   );
 }

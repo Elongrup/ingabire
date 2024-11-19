@@ -77,7 +77,8 @@ export default function UserList() {
   style={{
     width: '180px',
     height: '35px', 
-    backgroundImage: 'linear-gradient(to right top, #b28529, #bf8d27, #cc9525, #d99c22, #e7a41e, #eaa92c, #ecaf38, #efb443, #e8b85b, #e0bb71, #d9be86, #d2c09b)',
+    background: 'linear-gradient(90deg, rgba(121,31,255,1) 0%, rgba(244,172,255,1) 100%)',
+                      
   }}
 >
   Save 
@@ -106,7 +107,7 @@ export default function UserList() {
                     <button
                       onClick={handleAddUserClick}
                       style={{
-                        background: 'linear-gradient(to right top, #b28529, #bf8d27, #cc9525, #d99c22, #e7a41e, #eaa92c, #ecaf38, #efb443, #e8b85b, #e0bb71, #d9be86, #d2c09b)',
+                        color: 'black',
                       }}
                       className="flex items-center justify-center p-2 text-white rounded-md hover:opacity-80 transition-opacity text-xs"
                     >
@@ -136,8 +137,8 @@ export default function UserList() {
                         <td className="py-2 px-4 border border-gray-300">
                           <button
                             style={{
-                              backgroundImage: 'linear-gradient(to right top, #b28529, #bf8d27, #cc9525, #d99c22, #e7a41e, #eaa92c, #ecaf38, #efb443, #e8b85b, #e0bb71, #d9be86, #d2c09b)',
-                              color: 'white',
+                              
+                              color: 'black',
                               borderRadius: '8px',
                               width: '120px',
                             }}
@@ -149,8 +150,8 @@ export default function UserList() {
                         <td className="py-2 px-4 border border-gray-300">
                           <button
                             style={{
-                              backgroundImage: 'linear-gradient(to right top, #b22929, #c44227, #d45b23, #e2731f, #ee8c1a, #f49125, #f9972e, #ff9c37, #ff9049, #ff865a, #ff7e69, #fb7878)',
-                              color: 'white',
+                             
+                              color: 'black',
                               borderRadius: '8px',
                               width: '120px',
                             }}

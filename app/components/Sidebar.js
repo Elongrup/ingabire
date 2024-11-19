@@ -1,14 +1,7 @@
 "use client";
 import React, { useState } from "react";
+import Image from 'next/image';
 import Paper from "@mui/material/Paper";
-import PersonIcon from "@mui/icons-material/Person";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import AssignmentIcon from "@mui/icons-material/Assignment";
-import PeopleIcon from "@mui/icons-material/People";
-import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
-import ListAltIcon from "@mui/icons-material/ListAlt";
-import ReportIcon from "@mui/icons-material/Report";
-import LocalOfferIcon from "@mui/icons-material/LocalOffer";
 
 export default function Sidebar({ links, role, onSelect }) {
   const [selectedButton, setSelectedButton] = useState(null); // Track the selected button
@@ -23,117 +16,112 @@ export default function Sidebar({ links, role, onSelect }) {
     color: selectedButton === buttonKey ? "white" : "black", // White text if selected
   });
 
-  const gradientTextStyle = {
-    background: "linear-gradient(to right top, #b28529, #e7a41e)",
+  return (
+    <div>
+      <div className="sidebar p-6 w-64 bg-gray-100 shadow-lg m-4">
+        <Paper
+          elevation={1}
+          className="border border-gray-300 rounded-lg mb-6"
+          style={{
+            maxWidth: "200px", 
+            height: "96vh",  // Set height to cover the screen
+            padding: "20px", 
+            display: "flex",  // Use flexbox to position elements
+            flexDirection: "column", // Stack elements vertically
+            justifyContent: "space-between"  // Distribute space evenly between sections
+          }}
+        >
+          <div>
+            <center>
+            <button
+  style={{
+    background: "linear-gradient(90deg, rgba(121,31,255,1) 0%, rgba(244,172,255,1) 100%)",
     WebkitBackgroundClip: "text",
     WebkitTextFillColor: "transparent",
-  };
-
-  return (
-    <div className="sidebar p-6 w-64 bg-gray-100 shadow-lg m-4">
-      {/* Manage Users Section */}
-      <Paper elevation={1} className="p-4 border border-gray-300 rounded-lg mb-6">
-      <h2 className="flex items-center font-semibold mb-2 text-white bg-clip-text" style={{ background: 'linear-gradient(to right top, #b28529, #bf8d27, #cc9525, #d99c22, #e7a41e, #eaa92c, #ecaf38, #efb443, #e8b85b, #e0bb71, #d9be86, #d2c09b)' }}>
-                <PersonIcon fontSize="small" className="mr-2" />
-                Manage Users
-              </h2>
-        <ul className="space-y-2">
-          <li>
+    border: "none",
+    padding: "10px 20px",
+    borderRadius: "5px",
+    cursor: "pointer",
+    fontWeight: "bold",
+    fontSize: "24px",
+  }}
+>
+  Elon grup
+</button>
+</center>
+          </div>
+          {/* Buttons Section */}
+          <div className="button-section">
+            
             <button
-              className="block py-2 px-4 hover:bg-gray-200 rounded w-full"
+              className="block py-2 px-4 hover:bg-gray-200 rounded w-full mb-2"
               style={buttonStyle("users")}
               onClick={() => handleClick("users")}
             >
-              <PeopleIcon fontSize="small" className="mr-1" style={{ color: "#e7a41e" }} />
               Users
             </button>
-          </li>
-          <li>
             <button
-              className="block py-2 px-4 hover:bg-gray-200 rounded w-full"
+              className="block py-2 px-4 hover:bg-gray-200 rounded w-full mb-2"
               style={buttonStyle("role")}
               onClick={() => handleClick("role")}
             >
-              <LocalOfferIcon fontSize="small" className="mr-1" style={{ color: "#e7a41e" }} />
               Role
             </button>
-          </li>
-        </ul>
-      </Paper>
-
-      {/* Manage Products Section */}
-      <Paper elevation={1} className="p-4 border border-gray-300 rounded-lg mb-6">
-      <h2 className="flex items-center font-semibold mb-2 text-white bg-clip-text" style={{ background: 'linear-gradient(to right top, #b28529, #bf8d27, #cc9525, #d99c22, #e7a41e, #eaa92c, #ecaf38, #efb443, #e8b85b, #e0bb71, #d9be86, #d2c09b)' }}>
-                <ShoppingCartIcon fontSize="small" className="mr-2" />
-                Manage Products
-              </h2>
-        <ul className="space-y-2">
-          <li>
             <button
-              className="block py-2 px-4 hover:bg-gray-200 rounded w-full"
+              className="block py-2 px-4 hover:bg-gray-200 rounded w-full mb-2"
               style={buttonStyle("addProduct")}
               onClick={() => handleClick("addProduct")}
             >
-              <AddShoppingCartIcon
-                fontSize="small"
-                className="mr-1"
-                style={{ color: "#e7a41e" }}
-              />
               Add Product
             </button>
-          </li>
-          <li>
             <button
-              className="block py-2 px-4 hover:bg-gray-200 rounded w-full"
+              className="block py-2 px-4 hover:bg-gray-200 rounded w-full mb-2"
               style={buttonStyle("listProducts")}
               onClick={() => handleClick("listProducts")}
             >
-              <ListAltIcon fontSize="small" className="mr-1" style={{ color: "#e7a41e" }} />
               List Products
             </button>
-          </li>
-        </ul>
-      </Paper>
-
-      {/* Service Management Section */}
-      <Paper elevation={1} className="p-4 border border-gray-300 rounded-lg">
-      <h2 className="flex items-center font-semibold mb-2 text-white bg-clip-text" style={{ background: 'linear-gradient(to right top, #b28529, #bf8d27, #cc9525, #d99c22, #e7a41e, #eaa92c, #ecaf38, #efb443, #e8b85b, #e0bb71, #d9be86, #d2c09b)' }}>
-                <ShoppingCartIcon fontSize="small" className="mr-2" />
-                Service Management
-              </h2>
-        <ul className="space-y-2">
-          <li>
             <button
-              className="block py-2 px-4 hover:bg-gray-200 rounded w-full"
+              className="block py-2 px-4 hover:bg-gray-200 rounded w-full mb-2"
               style={buttonStyle("listOrders")}
               onClick={() => handleClick("listOrders")}
             >
-              <ListAltIcon fontSize="small" className="mr-1" style={{ color: "#e7a41e" }} />
               List Of Orders
             </button>
-          </li>
-          <li>
             <button
-              className="block py-2 px-4 hover:bg-gray-200 rounded w-full"
+              className="block py-2 px-4 hover:bg-gray-200 rounded w-full mb-2"
               style={buttonStyle("reports")}
               onClick={() => handleClick("reports")}
             >
-              <ReportIcon fontSize="small" className="mr-1" style={{ color: "#e7a41e" }} />
               Reports
             </button>
-          </li>
-          <li>
             <button
-              className="block py-2 px-4 hover:bg-gray-200 rounded w-full"
+              className="block py-2 px-4 hover:bg-gray-200 rounded w-full mb-6"
               style={buttonStyle("claims")}
               onClick={() => handleClick("claims")}
             >
-              <AssignmentIcon fontSize="small" className="mr-1" style={{ color: "#e7a41e" }} />
               Claims
             </button>
-          </li>
-        </ul>
-      </Paper>
+          </div>
+
+          {/* Profile Section */}
+          <div className="profile-section mt-6">
+            <div className="flex justify-center">
+              <div className="relative w-16 h-16 rounded-full overflow-hidden">
+                <Image
+                  src="/1.jpg" // Replace with actual profile image URL
+                  alt="Profile"
+                  width={64} // Set width
+                  height={64} // Set height
+                  layout="intrinsic"
+                  objectFit="cover" 
+                  style={{ borderRadius: "50%" }} // Makes image circular
+                />
+              </div>
+            </div>
+          </div>
+        </Paper>
+      </div>
     </div>
   );
 }
