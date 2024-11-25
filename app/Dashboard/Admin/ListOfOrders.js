@@ -28,7 +28,7 @@ export default function ListProduct() {
 
   const headerStyle = {
     backgroundImage:
-      "linear-gradient(to right top, #b28529, #bf8d27, #cc9525, #d99c22, #e7a41e)",
+          'linear-gradient(90deg, rgba(121,31,255,1) 0%, rgba(244,172,255,1) 100%)',
     color: "white",
     textAlign: "center",
     padding: "8px 0",
@@ -46,7 +46,7 @@ export default function ListProduct() {
       case "inProgress":
         return {
           backgroundImage:
-            "linear-gradient(to right top, #b28529, #bf8d27, #cc9525, #d99c22, #e7a41e)",
+          'linear-gradient(90deg, rgba(121,31,255,1) 0%, rgba(244,172,255,1) 100%)',
           color: "white",
           borderRadius: "8px",
         };
@@ -67,7 +67,7 @@ export default function ListProduct() {
       case "edit":
         return {
           backgroundImage:
-            "linear-gradient(to right top, #b28529, #bf8d27, #cc9525, #d99c22, #e7a41e)",
+          'linear-gradient(90deg, rgba(121,31,255,1) 0%, rgba(244,172,255,1) 100%)',
           color: "white",
           borderRadius: "8px",
         };
@@ -90,7 +90,11 @@ export default function ListProduct() {
   };
 
   return (
-    <div className="flex-1 m-4 p-4 bg-white rounded-lg shadow-lg">
+    <div className="flex-1 m-4 p-4 bg-white rounded-lg shadow-lg"
+    style={{
+      marginLeft: "20px", // Add left margin to the container
+      marginRight: "0px", // Add right margin to the container
+    }}>
       <Paper
         elevation={3}
         className="p-6 mx-auto mt-4 border border-gray-300 shadow-lg"

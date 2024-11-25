@@ -17,7 +17,6 @@ export default function AdminDashboard() {
     { label: "Users", href: "users" },
     { label: "Role", href: "role" },
     { label: "Add Product", href: "addProduct" },
-    { label: "List Products", href: "listProducts" },
     { label: "List Orders", href: "listOrders" },
     { label: "Reports", href: "reports" },
     { label: "Claims", href: "claims" },
@@ -42,8 +41,6 @@ export default function AdminDashboard() {
         return <div>Role Management Content</div>;
       case "addProduct":
         return <AddProduct />;
-      case "listProducts":
-        return <ListProduct />;
       case "listOrders":
         return <ListOfOrders />;
       case "reports":
@@ -65,7 +62,10 @@ export default function AdminDashboard() {
           </div>
 
           {/* Dynamic Content Area */}
-          <div className="flex-1 p-6 bg-gray-50 shadow rounded-lg" style={{ maxWidth: "80%" }}>
+          <div className="flex-1 p-6 bg-gray-50 shadow rounded-lg" style={{ maxWidth: "100%",
+             marginLeft: "15px", // Add left margin to the container
+             marginRight: "20px", // Add right margin to the container
+          }}>
             <div className="sticky top-0 z-10 bg-white shadow-md mb-4">
               <Header onHomeClick={handleHomeClick} />
             </div>
